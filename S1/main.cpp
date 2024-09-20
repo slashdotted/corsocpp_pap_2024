@@ -72,16 +72,30 @@ void default_values() {
 }
 
 void string_type() {
-    std::string messaggio;
-    messaggio = "Ciao mondo";
+    std::string messaggio{"Ciao mondo"};
     std::cout << messaggio << '\n';
     messaggio += "!!!";
-    std::cout << messaggio << '\n';
+    std::cout << messaggio[3] << '\n';
     // slide 23
+}
+
+auto g(int a, int b) {
+    return a+b;
+}
+
+void f(int a, double b) {
+    auto c{a+b};
+}
+
+void initialization() {
+    //int pi{3.14};
+    auto pi2{3.1415};
+    //pi = 3.14;
 }
 
 int main() {
     namespaces();
     default_values();
     string_type();
+    initialization();
 }

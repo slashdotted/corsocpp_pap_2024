@@ -3,17 +3,59 @@
 
 using namespace std;
 
-void print(const Fraction& f) {
-	cout << f.numerator << "/" <<
-	f.denominator << endl;
+Fraction::Fraction()
+    : Fraction{0,1} /* numerator{44} <--- non posso
+                       più farlo perché numerator
+                       è già stato inizializzato */
+{
+    //std::cout << "Fraction() " << this << std::endl;
+    // Fraction(0,1); // è un altro oggetto!
 }
 
-int main() {
-	Fraction f1;
-	f1.numerator = 2;
-	f1.denominator = 3;
-	print(f1);
-	f1.numerator = 7;
-	f1.denominator = 3;
-	print(f1);
+Fraction::Fraction(int n, int d)
+    : numerator{n}, denominator{d} // init-list
+{
+    //std::cout << "Fraction(int,int) " << this << std::endl;
+    if (denominator == 0) {
+        // ...
+    }
+    // l'oggetto è già inizializzato
+    // print(*this);
+}
+
+/*
+int Fraction::num() const {
+    return numerator;
+}
+
+void Fraction::num(int value) {
+    numerator = value;
+}*/
+
+int Fraction::den() const
+{
+    return denominator;
+}
+
+void Fraction::den(int value)
+{
+    denominator = value;
+}
+
+double Fraction::to_double() const
+{
+    return (double) numerator / denominator;
+}
+
+
+Fraction::operator double() const
+{
+    //return to_double();
+    return (double) numerator / denominator;
+}
+
+void print(const Fraction& f)
+{
+    cout << f.num() << "/" <<
+         f.den() << endl;
 }

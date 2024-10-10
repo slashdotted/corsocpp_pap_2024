@@ -47,12 +47,51 @@ double Fraction::to_double() const
     return (double) numerator / denominator;
 }
 
+Fraction Fraction::operator+(Fraction o)
+{
+    o += *this;
+    return o;
+}
 
-Fraction::operator double() const
+Fraction &Fraction::operator +=(const Fraction &o)
+{
+    int temp_numerator { o.numerator * denominator };
+    denominator *= o.denominator;
+    numerator *= o.denominator;
+    numerator += temp_numerator;
+    return *this;
+}
+
+// prefix
+Fraction &Fraction::operator++()
+{
+    return *this += 1;
+}
+
+// postfix
+Fraction Fraction::operator++(int)
+{
+    Fraction t{*this};
+    *this += 1;
+    return t;
+}
+
+/*Fraction &Fraction::operator -=(const Fraction &o)
+{
+    int temp_numerator { o.numerator * denominator };
+    denominator *= o.denominator;
+    numerator *= o.denominator;
+    numerator -= temp_numerator;
+    return *this;
+}*/
+
+
+
+/*Fraction::operator double() const
 {
     //return to_double();
     return (double) numerator / denominator;
-}
+}*/
 
 void print(const Fraction& f)
 {

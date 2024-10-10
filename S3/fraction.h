@@ -36,6 +36,14 @@ public:
 
     operator double() const;
 
+    Fraction operator+(Fraction o);
+
+    Fraction& operator +=(const Fraction& o);
+    //Fraction& operator -=(const Fraction& o);
+
+    Fraction& operator++(); // prefix
+    Fraction operator++(int); // postfix
+
 protected:
     // visibilità protected
 private:

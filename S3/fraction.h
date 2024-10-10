@@ -34,7 +34,7 @@ public:
 
     double to_double() const;
 
-    operator double() const;
+    //operator double() const;
 
     Fraction operator+(Fraction o);
 

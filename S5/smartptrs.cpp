@@ -8,7 +8,7 @@
 struct MyUniquePtrInt {
     MyUniquePtrInt(int *p) : m_p{p} {}
 
-    int& operator*()
+    int& operator*() const
     {
         return *m_p;
     }
@@ -37,7 +37,7 @@ struct MySharedPtrInt {
     // di MySharedPtrInt
     MySharedPtrInt(int *p) : m_p{p}, m_counter{new int{1}} {}
 
-    int& operator*()
+    int& operator*() const
     {
         return *m_p;
     }

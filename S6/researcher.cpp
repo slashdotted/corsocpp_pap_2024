@@ -20,5 +20,5 @@ const string &Researcher::researcharea() const
 }
 string Researcher::classname() const
 {
-    return Employee::classname()+":Researcher";
+    return "Researcher";
 }

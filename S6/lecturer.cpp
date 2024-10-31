@@ -24,5 +24,5 @@ string Lecturer::course() const
 }
 string Lecturer::classname() const
 {
-    return Employee::classname()+":Lecturer";
+    return "Lecturer";
 }

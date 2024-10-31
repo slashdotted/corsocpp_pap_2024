@@ -11,24 +11,29 @@ Employee::Employee(string name, string institute,
     : m_name{name}, m_institute{institute},
       m_employeenr{nr}
 {
-    cout << "Constructing Employee" << endl;
+    cout << "Constructing Employee " << m_name << endl;
 }
+
 Employee::~Employee()
 {
-    cout << "Destroying Employee" << endl;
+    cout << "Destroying Employee " << m_name << endl;
 }
+
 string Employee::name() const
 {
     return m_name;
 }
+
 string Employee::institute() const
 {
     return m_institute;
 }
+
 int Employee::employeenr() const
 {
     return m_employeenr;
 }
+
 string Employee::classname() const
 {
     return "Employee";

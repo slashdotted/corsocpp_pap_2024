@@ -6,7 +6,8 @@ using std::endl;
 using std::string;
 
 Researcher::Researcher(string name, string institute, int nr, string researcharea)
-    : m_researcharea{researcharea}
+    : Employee(name, institute, nr), // "equivalente" a super(...) in Java
+      m_researcharea{researcharea}
 {
     cout << "Costructing Researcher" << endl;
 }
@@ -20,5 +21,6 @@ const string &Researcher::researcharea() const
 }
 string Researcher::classname() const
 {
-    return "Researcher";
+    // Employee:: è come super in Java
+    return "Researcher and also "+Employee::classname();
 }

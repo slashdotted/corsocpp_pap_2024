@@ -1,5 +1,46 @@
+#include "employee.h"
+#include "researcher.h"
+#include "lecturer.h"
 #include <iostream>
 
-int main() {
-    std::cout << "Hello world\n";
+using std::cout;
+
+void stampaEmployee(const Employee& e)
+{
+    cout << "---\n" << "Name: " << e.name() << " Institute: "
+         << e.institute() << " Nr.:" <<  e.employeenr()
+         << " Class: " << e.classname() << "\n---\n" << '\n';
+}
+
+void stampaEmployee(Employee* e)
+{
+    cout << "---\n" << "Name: " << e->name() << " Institute: "
+         << e->institute() << " Nr.:" <<  e->employeenr()
+         << " Class: " << e->classname() << "\n---\n" << '\n';
+}
+
+void stampaEmployee2(Employee e)
+{
+    cout << "---\n" << "Name: " << e.name() << " Institute: "
+         << e.institute() << " Nr.:" <<  e.employeenr()
+         << " Class: " << e.classname() << "\n---\n" << '\n';
+}
+
+int main()
+{
+    //HasClassName hcs;
+
+    Employee e{"Ethan","Santuzzo Research", 1};
+    stampaEmployee(&e);
+
+    Researcher r{"Riccardo","Santuzzo Research", 2, "Computer Graphics"};
+    stampaEmployee(r);
+    cout << " Area: " << r.researcharea()
+         << " Class: " << r.classname() << '\n';
+
+    Lecturer l{"Lucia", "Santuzzo Research", 3, "Data Science", "AI"};
+    stampaEmployee(&l);
+    stampaEmployee2(l); // slicing!!!
+    cout << " Studies: " << l.studies() << " Course:" << l.course()
+         << " Class: " << l.classname() << '\n';
 }

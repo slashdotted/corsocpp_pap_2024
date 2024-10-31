@@ -6,7 +6,10 @@ using std::endl;
 using std::string;
 
 Lecturer::Lecturer(string name, string institute, int nr,
-                   string studies, string course) : m_course{course}
+                   string studies, string course) :
+    Employee(name, institute, nr), // "equivalente" a super(...) in Java
+    m_studies{studies},
+    m_course{course}
 {
     cout << "Costructing Lecturer" << endl;
 }

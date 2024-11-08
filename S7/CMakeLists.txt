@@ -8,3 +8,5 @@ add_executable(S7virtualdestructor virtualdestructor.cpp)
 add_executable(S7final final.cpp)
 add_executable(S7delete delete.cpp)
 add_executable(S7default default.cpp)
+add_executable(S7ex s7ex.cpp)
+

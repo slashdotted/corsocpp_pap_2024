@@ -1,4 +1,5 @@
 #include <iostream>
+
 struct A
 {
     A(int i = 0)

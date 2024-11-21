@@ -1,6 +1,7 @@
 #include "employee.h"
 #include "researcher.h"
 #include "lecturer.h"
+#include "lecturerresearcher.h"
 #include <iostream>
 
 using std::cout;
@@ -28,8 +29,6 @@ void stampaEmployee2(Employee e)
 
 int main()
 {
-    //HasClassName hcs;
-
     Employee e{"Ethan","Santuzzo Research", 1};
     stampaEmployee(&e);
 
@@ -43,4 +42,27 @@ int main()
     stampaEmployee2(l); // slicing!!!
     cout << " Studies: " << l.studies() << " Course:" << l.course()
          << " Class: " << l.classname() << '\n';
+
+    LecturerResearcher lr{"Amos", "ISIN", 165,
+                          "Computer Science",
+                          "Languages and frameworks",
+                          "Distributed Systems",
+                          10};
+
+    // Upcasting
+    Lecturer& llr{lr};
+    Researcher& rlr{lr};
+    Employee& elr{elr};
+
+    stampaEmployee(&lr);
+    stampaEmployee(&l);
+    stampaEmployee(&r);
+
+    // Downcasting
+    Employee& re{r};
+    //Lecturer& l_from_re{re};
+    //LecturerResearcher& lr_from_llr{llr};
+    //LecturerResearcher& lr_from_rlr{llr};
+    //LecturerResearcher& lr_from_elr{elr};
+
 }

@@ -52,6 +52,12 @@ int main()
     // dynamic_cast può fare downcasting attraversando una derivazione virtual
     Researcher* rp{dynamic_cast<Researcher*>(ep)}; // virtual base class
 
+    // "Emulazione" di instanceof
+    auto t{dynamic_cast<LecturerResearcher*>(rp)};
+    if (t) {
+        // rp è un LecturerResearcher
+    }
+
     // Cast NON valido da un puntatore generico (anche se "collegato" un Researcher) a
     // puntatore a Researcher
     // void* vp{&r};

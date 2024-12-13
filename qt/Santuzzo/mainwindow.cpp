@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include <QTimer>
+#include <random>
+#include <algorithm>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -115,7 +117,9 @@ void MainWindow::inizia_turno()
     // Aggiungi un colore a caso e inizia un nuovo turno
     in_mostra_colori = true;
     QList<QString> colori{"red","green","yellow","blue"};
-    std::random_shuffle(colori.begin(), colori.end());
+    std::random_device rd;
+    std::mt19937 generator{rd()};
+    std::shuffle(colori.begin(), colori.end(), generator);
     auto nuovo{colori.at(0)};
     m_colori.push_back(nuovo);
     m_mossa = -1;

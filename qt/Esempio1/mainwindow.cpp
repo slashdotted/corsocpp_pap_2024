@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include <QDebug>
+#include <string>
 
 static void foo(QPushButton b)
 {
@@ -38,5 +39,8 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::apriFile()
 {
     qDebug() << "Apertura file";
+    std::string m{"Questa è una stringa"};
+    QString q{"Questa è una stringa"};
+    qDebug() << "#m = " << m.size() << " #q = " << q.size();
 }
 

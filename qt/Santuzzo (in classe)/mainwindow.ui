@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>448</width>
-    <height>482</height>
+    <height>543</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -127,6 +127,8 @@
     </property>
     <addaction name="actionNuova_partita"/>
     <addaction name="separator"/>
+    <addaction name="actionPreferenze"/>
+    <addaction name="separator"/>
     <addaction name="actionEsci"/>
    </widget>
    <addaction name="menuPartita"/>
@@ -162,6 +164,14 @@
    </property>
    <property name="text">
     <string>Esci</string>
+   </property>
+  </action>
+  <action name="actionPreferenze">
+   <property name="text">
+    <string>Preferenze</string>
+   </property>
+   <property name="toolTip">
+    <string>Configura le preferenze del gioco</string>
    </property>
   </action>
  </widget>

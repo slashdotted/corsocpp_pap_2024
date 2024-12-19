@@ -17,6 +17,7 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        gamepreferences.h gamepreferences.cpp gamepreferences.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -24,6 +25,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         risorse.qrc
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Santuzzo APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

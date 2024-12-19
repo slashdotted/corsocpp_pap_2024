@@ -25,6 +25,11 @@ private slots:
     void click_giocatore();
     void inizio_turno();
     void randomizza_bottoni();
+    void on_actionConfigura_gioco_triggered();
+    void log(const QString& msg) const;
+
+signals:
+    void messaggio(QString msg);
 
 private:
     void attiva_input_giocatore();
@@ -33,6 +38,7 @@ private:
     void spegni(const QString& nome);
     QList<QString> m_colori;
     int m_mossa;
+    int m_livello{1};
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H

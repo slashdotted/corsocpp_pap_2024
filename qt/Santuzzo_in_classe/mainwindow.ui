@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>448</width>
-    <height>482</height>
+    <height>543</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -127,6 +127,8 @@
     </property>
     <addaction name="actionNuova_partita"/>
     <addaction name="separator"/>
+    <addaction name="actionConfigura_gioco"/>
+    <addaction name="separator"/>
     <addaction name="actionEsci"/>
    </widget>
    <addaction name="menuPartita"/>
@@ -162,6 +164,14 @@
    </property>
    <property name="text">
     <string>Esci</string>
+   </property>
+  </action>
+  <action name="actionConfigura_gioco">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::DocumentProperties"/>
+   </property>
+   <property name="text">
+    <string>Configura gioco</string>
    </property>
   </action>
  </widget>
